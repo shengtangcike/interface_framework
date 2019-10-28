@@ -1,0 +1,103 @@
+
+	<!-- CSS goes in the document HEAD or added to your external stylesheet -->
+<style type="text/css">
+table.hovertable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #999999;
+    border-collapse: collapse;
+}
+table.hovertable th {
+    background-color:#ff6347;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+}
+table.hovertable tr {
+    background-color:#d4e3e5;
+}
+table.hovertable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+}
+</style>
+
+<!-- Table goes in the document BODY -->
+
+<head>
+
+<meta http-equiv="content-type" content="txt/html; charset=utf-8" />
+
+</head>
+
+<table class="hovertable">
+<tr>
+    <th>接口 URL</th><th>请求数据</th><th>接口响应数据</th><th>接口调用耗时(单位：ms)</th><th>断言词</th><th>测试结果</th>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/register/</td><td>{&quot;username&quot;:&quot;testman443&quot;, &quot;password&quot;:&quot;123456789abc&quot;,&quot;email&quot;:&quot;sed@qq.com&quot;}</td><td>{&quot;code&quot;: &quot;00&quot;, &quot;userid&quot;: 3757}</td><td>31</td><td>&quot;code&quot;: &quot;00&quot;</td><td>
+    成功</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/login/</td><td>{&quot;username&quot;: &quot;testman443&quot;, &quot;password&quot;: &quot;d266f2f31cf903c870027659030e967e&quot;}</td><td>{&quot;token&quot;: &quot;b681b3ea51a61b429950c1b9c9784cfb&quot;, &quot;code&quot;: &quot;00&quot;, &quot;userid&quot;: 3757, &quot;login_time&quot;: &quot;2019-10-28 08:51:14&quot;}</td><td>26</td><td>token</td><td>
+    成功</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/create/</td><td>{&quot;userid&quot;:3757, &quot;token&quot;: &quot;b681b3ea51a61b429950c1b9c9784cfb&quot;, &quot;title&quot;:&quot;python&quot;, &quot;content&quot;:&quot;python port test&quot;}</td><td>{&quot;data&quot;: [{&quot;content&quot;: &quot;python port test&quot;, &quot;title&quot;: &quot;python&quot;}], &quot;code&quot;: &quot;00&quot;, &quot;userid&quot;: 3757}</td><td>29</td><td>&quot;code&quot;: &quot;00&quot;</td><td>
+    成功</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/getBlogsOfUser/</td><td>{&quot;userid&quot;:3757, &quot;token&quot;: &quot;b681b3ea51a61b429950c1b9c9784cfb&quot; }</td><td>{&quot;data&quot;: [{&quot;update_time&quot;: null, &quot;title&quot;: &quot;python&quot;, &quot;content&quot;: &quot;python port test&quot;, &quot;articleId&quot;: 19577, &quot;owner&quot;: 3757, &quot;posted_on&quot;: &quot;2019-10-28 08:51:14&quot;}], &quot;code&quot;: &quot;00&quot;, &quot;userid&quot;: 3757}</td><td>22</td><td>&quot;title&quot;: &quot;(\w+)&quot;</td><td>
+    成功</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/getBlogContent/19577</td><td>19577</td><td>{&quot;code&quot;: &quot;00&quot;, &quot;data&quot;: [{&quot;update_time&quot;: null, &quot;title&quot;: &quot;python&quot;, &quot;content&quot;: &quot;python port test&quot;, &quot;articleId&quot;: 19577, &quot;owner&quot;: 3757, &quot;posted_on&quot;: &quot;2019-10-28 08:51:14&quot;}]}</td><td>25</td><td>&quot;content&quot;: &quot;python port test&quot;</td><td>
+    成功</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/update/</td><td>{&quot;userid&quot;:3757, &quot;token&quot;: &quot;b681b3ea51a61b429950c1b9c9784cfb&quot;, &quot;articleId&quot;:19577, &quot;title&quot;:&quot;python&quot;, &quot;content&quot;:&quot;test test&quot;}</td><td>{&quot;articleId&quot;: 19577, &quot;update_time&quot;: &quot;2019-10-28 08:51:14&quot;, &quot;code&quot;: &quot;00&quot;, &quot;userid&quot;: 3757}</td><td>26</td><td>&quot;update_time&quot;: &quot;2019</td><td>
+    成功</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/getBlogContent/19577</td><td>19577</td><td>{&quot;code&quot;: &quot;00&quot;, &quot;data&quot;: [{&quot;update_time&quot;: &quot;2019-10-28 08:51:14&quot;, &quot;title&quot;: &quot;python&quot;, &quot;content&quot;: &quot;test test&quot;, &quot;articleId&quot;: 19577, &quot;owner&quot;: 3757, &quot;posted_on&quot;: &quot;2019-10-28 08:51:14&quot;}]}</td><td>23</td><td>&quot;content&quot;: &quot;test test&quot;</td><td>
+    成功</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/delete/</td><td>{&quot;userid&quot;:3757, &quot;token&quot;: &quot;b681b3ea51a61b429950c1b9c9784cfb&quot;, &quot;articleId&quot;:[19577]}</td><td>{&quot;articleId&quot;: [19577], &quot;code&quot;: &quot;00&quot;, &quot;userid&quot;: 3757}</td><td>30</td><td>&quot;code&quot;: &quot;00&quot;</td><td>
+    成功</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/getBlogContent/19577</td><td>19577</td><td>{&quot;code&quot;: &quot;03&quot;, &quot;articleId&quot;: &quot;19577&quot;}</td><td>24</td><td>{&quot;code&quot;: &quot;03&quot;</td><td>
+    成功</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/register/</td><td>{&quot;username&quot;:&quot;testman444&quot;, &quot;password&quot;:&quot;123456789abc&quot;,&quot;email&quot;:&quot;sed@qq.com&quot;}</td><td>{&quot;code&quot;: &quot;00&quot;, &quot;userid&quot;: 3758}</td><td>33</td><td>&quot;code&quot;: &quot;00&quot;</td><td>
+    成功</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/login/</td><td>{&quot;username&quot;: &quot;testman444&quot;, &quot;password&quot;: &quot;d266f2f31cf903c870027659030e967e&quot;}</td><td>{&quot;token&quot;: &quot;5fd266e917c566fcd5ac90877b7b7686&quot;, &quot;code&quot;: &quot;00&quot;, &quot;userid&quot;: 3758, &quot;login_time&quot;: &quot;2019-10-28 08:51:15&quot;}</td><td>24</td><td>token</td><td>
+    成功</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+
+    <td>http://39.106.41.11:8080/create/</td><td>{&quot;userid&quot;:3758, &quot;token&quot;: &quot;5fd266e917c566fcd5ac90877b7b7686&quot;, &quot;title&quot;:&quot;python&quot;, &quot;content&quot;:&quot;python port test&quot;}</td><td>{&quot;data&quot;: [{&quot;content&quot;: &quot;python port test&quot;, &quot;title&quot;: &quot;python&quot;}], &quot;code&quot;: &quot;00&quot;, &quot;userid&quot;: 3758}</td><td>35</td><td>&quot;code&quot;: &quot;00&quot;</td><td>
+    成功</td>
+</tr>
+</table>
+	
